@@ -1,0 +1,11 @@
+body {
+font-family: Arial, sans-serif;
+}
+  
+form {
+margin-bottom: 20px;
+}
+  
+#current-weather, #forecast, #search-history {
+margin-top: 20px;
+}
