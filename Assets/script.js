@@ -1,14 +1,14 @@
-const apiKey = ("e49a9cd38b998d14367a7bcf07f1604a");
-const searchForm = document.getElementById("search-form");
-const cityInput = document.getElementById("city-input");
-const currentWeatherContainer = document.getElementById("current-weather");
-const forecastContainer = document.getElementById("forecast");
-const searchHistoryContainer = document.getElementById("search-history");
+var apiKey = "aa4fc770e1e6cd4909713a146a863bd1";
+var searchForm = document.getElementById("search-form");
+var cityInput = document.getElementById("city-input");
+var currentWeatherContainer = document.getElementById("current-weather");
+var forecastContainer = document.getElementById("forecast");
+var searchHistoryContainer = document.getElementById("search-history");
 let searchHistory = [];
 
 searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const city = cityInput.value.trim();
+  var city = cityInput.value.trim();
 
   if (city) {
     getWeatherData(city);
@@ -16,7 +16,7 @@ searchForm.addEventListener("submit", function (event) {
 });
 
 function getWeatherData(city) {
-  const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${e49a9cd38b998d14367a7bcf07f1604a}";
+  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${aa4fc770e1e6cd4909713a146a863bd1}";
 
   fetch(apiUrl)
     .then((response) => {
@@ -26,29 +26,29 @@ function getWeatherData(city) {
       return response.json();
     })
     .then((data) => {
-      // Handle the data and update the UI
+      
       updateWeatherUI(data);
-      // Add the city to the search history
+      
       addToSearchHistory(city);
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
-      // Handle errors and update the UI accordingly
+      
     });
 }
 
 function updateWeatherUI(weatherData) {
-  // Clear previous content
+  
   currentWeatherContainer.innerHTML = "";
   forecastContainer.innerHTML = "";
 
-  // Extract relevant data from the API response and update the UI
+  
   const currentWeather = weatherData.list[0]; // Assuming the first item is the current weather
 
   // DONT TOUCH THIS IT TOOK ME AGES TO FIGURE OUT SERIOUSLY!!!!!!!!
   const convertKelvinToFahrenheit = (kelvin) => ((kelvin - 273.15) * 9/5 + 32).toFixed(2);
 
-  // Display current weather
+  
   const currentWeatherHtml = `
     <h2>${weatherData.city.name}</h2>
     <p>Date: ${currentWeather.dt_txt}</p>
@@ -58,7 +58,7 @@ function updateWeatherUI(weatherData) {
   `;
   currentWeatherContainer.innerHTML = currentWeatherHtml;
 
-  // Display 5-day forecast
+  
   const forecastHtml = weatherData.list
     .filter((item) => item.dt_txt.includes("12:00:00")) // Assuming you want daily forecasts at noon
     .map((item) => `
@@ -75,19 +75,19 @@ function updateWeatherUI(weatherData) {
 }
 
 function addToSearchHistory(city) {
-  // Add the city to the search history array
+  
   searchHistory.push(city);
-  // Update the UI to display the search history
+  
   displaySearchHistory();
 }
 
 function displaySearchHistory() {
-  // Display the search history in the UI
+  
   const historyHtml = searchHistory.map((city) => `<p>${city}</p>`).join("");
   searchHistoryContainer.innerHTML = historyHtml;
 }
 
 function handleHistoryClick(city) {
-  // When a city in the search history is clicked, fetch and display its weather data
+ 
   getWeatherData(city);
 }
