@@ -23,7 +23,7 @@
   Contributions to enhance Dane's Weather Dashboard are welcome! Please fork the repository, make your changes, and submit a pull request for review. Or even better, reach out to me via my email located below and tell me about your suggestions to improve the site!
   
   ## Help
-  rv
+  The only assistance I got was from a fellow student named Hyrum. We met in a private meeting and he answered various of my many questions. He was a big help to me finishing this site.
   
   ![License](https://img.shields.io/badge/license-None-blue.svg)
   ## License
