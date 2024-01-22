@@ -184,4 +184,10 @@ button {
   margin: 5px;
   padding: 10px;
   border: 1px solid #ccc;
+  flex: 1;
+}
+
+#five-day-forcast {
+display: flex;
+justify-content: space-between;
 }

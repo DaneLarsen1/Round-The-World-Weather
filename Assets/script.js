@@ -55,14 +55,16 @@ function updateWeatherUI(weatherData) {
   // Display 5-day forecast, including the current day
   const forecastHtml = weatherData.list
     .filter((item) => item.dt_txt.includes('12:00:00') && !item.dt_txt.includes('00:00:00')) // Filter for noon forecasts, excluding midnight
-    .slice(1, 6) // Limit to the next 5 days, including the current day
+    .slice(0, 5) // Limit to the next 5 days, including the current day
     .map((item) => `
-      <div class="forecast-day">
+      <div id="five-day-forcast">
+        <div class="forecast-day">
         <p>Date: ${item.dt_txt}</p>
         <p>Temp: ${convertKelvinToFahrenheit(item.main.temp)} °F</p>
         <p>Wind: ${item.wind.speed} m/s</p>
         <p>Humidity: ${item.main.humidity} %</p>
       </div>
+    </div>
     `)
     .join('');
 
