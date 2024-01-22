@@ -10,7 +10,8 @@
   - [Help](#tests)
   - [License](#license)
   - [Questions](#questions)
-  - [Demo/Link](#Demo/Link)
+  - [Demo](#Demo)
+  - [Link](#Link)
   
   ## Installation
   To install Dane's Weather Dashboard, clone the repository to your local machine, navigate to the project directory, and run `index.html` in your preferred browser.
@@ -32,8 +33,10 @@ This project is licensed under the None license. For more information, see [here
   For any questions, please contact me at [danelarsen12@gmail.com](mailto:danelarsen12@gmail.com).
   
   GitHub: [DaneLarsen1](https://github.com/DaneLarsen1)
-
-  ## Demo/Link
-  Link to deployed application: 
   
+  ## Demo
+  ![Pic of deployed webisite](images/Weather-App-Demo.png)
+
+  ## Link
+  Link to deployed application: https://danelarsen1.github.io/Weather-App/
   
