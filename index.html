@@ -3,24 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Forecast App</title>
+  <title>Dane's Weather App</title>
   <link rel="stylesheet" href="Assets/style.css">
 </head>
 <body>
-  <div>
-    <h1>Weather Forecast App</h1>
+  <header>
+    <h1>Dane's Weather Dashboard</h1>
+  </header>
+
+  <div class="main-container">
     <form id="search-form">
-      <label for="city-input">Enter City:</label>
+      <label for="city-input">Search for a city:</label>
       <input type="text" id="city-input" required>
       <button type="submit">Search</button>
     </form>
 
-    <div id="current-weather"></div>
-
-    <div id="forecast"></div>
-
     <div id="search-history"></div>
-  </div>
+
+    <div id="weather-container">
+      <div id="current-weather-box"></div>
+      <div id="forecast"></div>
+      </div>
+    </div>
 
   <script src="Assets/script.js"></script>
 </body>
