@@ -39,11 +39,10 @@ function updateWeatherUI(weatherData) {
 
   const currentWeather = weatherData.list[0];
   const currentDate = new Date(currentWeather.dt_txt);
-   let tempDate = new Date(); // Get the current date
-  tempDate.setUTCHours(0, 0, 0, 0); // Reset hours, minutes, seconds, and ms for an accurate comparison
+   let tempDate = new Date(); 
+  tempDate.setUTCHours(0, 0, 0, 0); 
   
   if (currentDate > tempDate) {
-    // Adjust by subtracting one day from the currentDate
     currentDate.setDate(currentDate.getDate() - 1);
   }
 
