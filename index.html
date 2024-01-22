@@ -10,18 +10,19 @@
   <header>
     <h1>Dane's Weather Dashboard</h1>
   </header>
-
   <div class="main-container">
+    <div id="left-column">
     <form id="search-form">
-      <label for="city-input">Search for a city:</label>
+      <label for="city-input" id="city-search-label">Search for a city:</label>
       <input type="text" id="city-input" required>
       <button type="submit">Search</button>
     </form>
 
     <div id="search-history"></div>
-
+  </div>
     <div id="weather-container">
       <div id="current-weather-box"></div>
+      <h2 id="forecast-heading">5 Day Forecast</h2>
       <div id="forecast"></div>
       </div>
     </div>
